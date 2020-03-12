@@ -1,28 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import {
-    StyledErrorDisplay,
-    StyledMovieList,
-    StyledMovieListPage,
-    StyledMovieListTitle,
-    StyledMoviePreview,
-} from "./MovieListStyling";
+import { Config } from "../config";
+import { Movie } from "../movie";
+
+import { StyledErrorDisplay, StyledMovieList, StyledMovieListPage, StyledMovieListTitle } from "./MovieListStyling";
+
+import { MoviePreview } from "./MoviePreview";
 import { Loader } from "./Loader";
-
-interface Config {
-    images: {
-        base_url: string;
-        poster_sizes: string[];
-    };
-}
-
-interface Movie {
-    id: number;
-    title: string;
-    poster_path: string;
-    release_date: string;
-    popularity: number;
-}
 
 const ErrorDisplay: React.FunctionComponent<{ error: string | null }> = props => {
     if (props.error) {
@@ -30,31 +14,6 @@ const ErrorDisplay: React.FunctionComponent<{ error: string | null }> = props =>
     } else {
         return null;
     }
-};
-
-interface MoviePreviewProps {
-    config: Config;
-    movie: Movie;
-}
-const MoviePreview: React.FunctionComponent<MoviePreviewProps> = ({ config, movie }: MoviePreviewProps) => {
-    const thumbnailURL = (thumb: string): string => {
-        if (!config) {
-            return "";
-        }
-
-        return `${config.images.base_url}${config.images.poster_sizes[0]}/${thumb}`;
-    };
-
-    return (
-        <StyledMoviePreview>
-            <div>
-                {movie.title}
-                <img src={thumbnailURL(movie.poster_path)} />
-            </div>
-            <div>{movie.release_date}</div>
-            <div>{movie.popularity}</div>
-        </StyledMoviePreview>
-    );
 };
 
 const MovieList: React.FunctionComponent<{}> = () => {

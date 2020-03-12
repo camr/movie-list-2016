@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import styled from "styled-components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import MovieList from "./components/MovieList";
+import MovieDetails from "./components/MovieDetails";
+
+interface AppProps {}
+
+const App: React.FunctionComponent<AppProps> = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={MovieList} />
+                <Route exact path="/movie/:id" component={MovieDetails} />
+            </Switch>
+        </BrowserRouter>
+    );
+};
 
 export default App;

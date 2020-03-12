@@ -1,11 +1,15 @@
 # Axios Movie Lister
 
-## To Run
+## Development
 
 Create a `.env.local` file with the following contents:
 
-```
+```shell
 REACT_APP_MOVIE_DB_API_KEY=<API Key for themoviedb.org>
+```
+
+```shell
+yarn start
 ```
 
 ## Landing Page

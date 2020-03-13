@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // Movie Preview:
 // - Movie title along top row
@@ -30,28 +31,33 @@ export const StyledMoviePreview = styled.li`
 // Movie Poster Thumbnail
 export const StyledMovieThumbnail = styled.img`
     padding-left: 10px;
+
+    height: 138px;
+    width: 102px;
 `;
 
 // Movie Release Date
 export const StyledReleaseAndDetails = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
 
-    padding: 20px 0;
+    padding-left: 20px;
 
     .release-date {
         font-size: 1em;
         text-align: center;
+
+        padding-bottom: 20px;
     }
 `;
 
 // Movie "Details" Button
-export const StyledDetailedButton = styled.button`
+export const StyledDetailedButton = styled(Link)`
     outline: none;
 
-    background: #2a4365;
+    background: cadetblue;
     border: 0;
     border-radius: 5px;
     box-shadow: -3px 3px 3px rgba(100, 100, 100, 0.5);
@@ -62,7 +68,8 @@ export const StyledDetailedButton = styled.button`
     font-size: 1em;
     font-weight: bold;
     letter-spacing: 0.5px;
-    padding: 0.25em 0.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
     text-transform: uppercase;
 
     transition: box-shadow 0.25s;
@@ -82,8 +89,7 @@ export const StyledPopularityScore = styled.div`
         height: 4em;
         width: 4em;
 
-        background: rgb(221, 107, 32);
-        background: linear-gradient(149deg, rgba(237, 137, 54, 1) 0%, rgba(156, 66, 33, 1) 98%);
+        background-color: coral;
         border: 0;
         border-radius: 4em;
         color: #fff;

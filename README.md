@@ -1,27 +1,48 @@
-# Axios Movie Lister
+# 2016 Most Popular Movies
 
-## Development
+This app lists the 20 most popular movies from 2016 as voted on by
+users of [The Movie DB](themoviesdb.org). Each entry shows preview
+information with a link to a more detailed view and allows users to
+select their "favorite" movies from the list.
 
-Create a `.env.local` file with the following contents:
+## Set up
+
+The app requires an API key for
+<https://www.themoviedb.org/documentation/api>.
+
+Before building or running the app, create a `.env.local` file with
+the following contents:
 
 ```shell
 REACT_APP_MOVIE_DB_API_KEY=<API Key for themoviedb.org>
 ```
 
+## Development
+
+Build, watch changes for files and serve a debug version of the app:
+
 ```shell
+npm install
 yarn start
 ```
 
-## Landing Page
+## Tests
 
--   List the top 20 movies from 2016
-    -   Descending order based on popularity
--   Display movie information
-    -   Title, poster thumbnail, release date, details button and popularity metric
+A few functional tests are included to get the structure in place, but
+need to be expanded on.
 
-## Details Page
+Unit tests can be run continuously:
 
--   Single detailed view of the movie
--   Favorite toggle button
--   Movie overview text
--   Close button (return to list)
+```shell
+yarn test
+```
+
+## Production
+
+To build a production-ready version of the app:
+
+```shell
+yarn build
+```
+
+A deployable version will be available in `build/`.

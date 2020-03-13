@@ -3,8 +3,8 @@ import { RouteComponentProps } from "react-router-dom";
 
 import classnames from "classnames";
 
-import { Config } from "../config";
-import { Movie } from "../movie";
+import { Config } from "../types/config";
+import { Movie } from "../types/movie";
 import { formatReleaseDate } from "../util";
 
 import { ErrorDisplay } from "../components/ErrorDisplay";

@@ -6,8 +6,8 @@ import styled from "styled-components";
 import MovieList from "./pages/MovieList";
 import MovieDetails from "./pages/MovieDetails";
 
-import { Movie } from "./movie";
-import { Config } from "./config";
+import { Movie } from "./types/movie";
+import { Config } from "./types/config";
 
 const PageLayout = styled.div`
     height: 100%;

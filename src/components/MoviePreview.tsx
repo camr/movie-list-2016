@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Config } from "../config";
-import { Movie } from "../movie";
+import { Config } from "../types/config";
+import { Movie } from "../types/movie";
 import { formatReleaseDate } from "../util";
 
 import {
